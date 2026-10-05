@@ -9,8 +9,8 @@ terraform {
   }
 
   backend "azurerm" {
-    resource_group_name  = "tfstate"
-    storage_account_name = "tfstatemohorian2026"
+    resource_group_name  = "tfstate-eastus"
+    storage_account_name = "tfstateeastus2026"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
     use_oidc             = true
@@ -23,7 +23,8 @@ provider "azurerm" {
   use_oidc = true
 }
 
+
 resource "azurerm_resource_group" "example" {
-  name     = "terraform-task-5-rg"
-  location = "Sweden Central"
+  name     = "tfstate"
+  location = "eastus"
 }
